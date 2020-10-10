@@ -4,6 +4,8 @@ module Main exposing (main)
 
 import Browser
 import Element exposing (Element)
+import Element.Background as Background
+import Element.Font as Font
 import Html exposing (Html)
 
 
@@ -65,4 +67,17 @@ view model =
 
 elementView : Model -> Element Msg
 elementView _ =
-    Element.text "Agora Records"
+    Element.column
+        [ Background.color (Element.rgb255 245 239 220)
+        , Element.width Element.fill
+        , Element.height Element.fill
+        ]
+        [ Element.row
+            [ Element.centerX
+            , Element.centerY
+            , Font.size 50
+            , Font.family [ Font.serif ]
+            , Font.letterSpacing 10
+            ]
+            [ Element.text "Agora Records" ]
+        ]
