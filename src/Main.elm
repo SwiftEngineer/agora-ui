@@ -73,11 +73,11 @@ elementView _ =
         , Element.height Element.fill
         ]
         [ Element.row
-            [ Element.centerX
+            [ Element.alignRight
             , Element.centerY
             , Font.size 50
             , Font.family [ Font.serif ]
             , Font.letterSpacing 10
             ]
-            [ Element.text "Agora Records" ]
+            [ Element.text "原来如此 Agora Records" ]
         ]
