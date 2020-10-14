@@ -4,11 +4,12 @@ module Main exposing (main)
 
 import Browser
 import Element exposing (Element)
-import Element.Background as Background
-import Element.Border as Border
-import Element.Font as Font
-import Element.Input as Input
 import Html exposing (Html)
+import Msg exposing (Msg(..))
+import State exposing (State(..))
+import View.Tabs.Artists exposing (viewArtists)
+import View.Tabs.LandingPage exposing (viewLandingPage)
+import View.Tabs.OurStory exposing (viewOurStory)
 
 
 main : Program () Model Msg
@@ -41,18 +42,8 @@ init _ =
     ( initialModel, Cmd.none )
 
 
-type State
-    = LandingPage
-    | OurStory
-    | Artists
-
-
 
 -- UPDATE
-
-
-type Msg
-    = ClickedTab State
 
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -82,89 +73,3 @@ elementView model =
 
         Artists ->
             viewArtists
-
-
-background : List (Element.Attribute Msg)
-background =
-    [ Background.color (Element.rgb255 245 239 220)
-    , Element.width Element.fill
-    , Element.height Element.fill
-    ]
-
-
-tabs : Element Msg
-tabs =
-    Element.row
-        [ Element.moveRight 100
-        , Element.spacing 50
-        ]
-        [ tab "Home" (ClickedTab LandingPage)
-        , tab "Our Story" (ClickedTab OurStory)
-        , tab "Artists" (ClickedTab Artists)
-        ]
-
-
-tab : String -> Msg -> Element Msg
-tab label msg =
-    Input.button
-        [ Element.paddingXY 10 3
-        , Border.innerGlow (Element.rgb255 133 94 66) 1.5
-        , Font.size 20
-        , Font.family [ Font.serif ]
-        , Font.letterSpacing 1
-        , Font.color (Element.rgb255 133 94 66)
-        ]
-        { onPress = Just msg
-        , label = Element.text label
-        }
-
-
-viewLandingPage : Element Msg
-viewLandingPage =
-    Element.column
-        background
-        [ tabs
-        , Element.row
-            [ Element.alignRight
-            , Element.centerY
-            , Font.size 50
-            , Font.family [ Font.serif ]
-            , Font.letterSpacing 10
-            ]
-            [ Element.text "原来如此 Agora Records"
-            ]
-        ]
-
-
-viewOurStory : Element Msg
-viewOurStory =
-    Element.column
-        background
-        [ tabs
-        , Element.row
-            [ Element.alignRight
-            , Element.centerY
-            , Font.size 50
-            , Font.family [ Font.serif ]
-            , Font.letterSpacing 10
-            ]
-            [ Element.text "原来如此 Our Story . . . "
-            ]
-        ]
-
-
-viewArtists : Element Msg
-viewArtists =
-    Element.column
-        background
-        [ tabs
-        , Element.row
-            [ Element.alignRight
-            , Element.centerY
-            , Font.size 50
-            , Font.family [ Font.serif ]
-            , Font.letterSpacing 10
-            ]
-            [ Element.text "原来如此 Artists . . . "
-            ]
-        ]
