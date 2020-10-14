@@ -9,6 +9,7 @@ import Msg exposing (Msg(..))
 import State exposing (Artist(..), State(..))
 import View.Tabs.Artists.Artists exposing (viewArtists)
 import View.Tabs.Artists.Luca
+import View.Tabs.Artists.Marv
 import View.Tabs.LandingPage exposing (viewLandingPage)
 import View.Tabs.OurStory exposing (viewOurStory)
 
@@ -80,7 +81,7 @@ elementView model =
                 Just artist ->
                     case artist of
                         Marv ->
-                            viewArtists
+                            View.Tabs.Artists.Marv.view
 
                         Luca ->
                             View.Tabs.Artists.Luca.view

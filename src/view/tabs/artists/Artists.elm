@@ -4,9 +4,12 @@ import Element exposing (Element)
 import Msg exposing (Msg(..))
 import View.Background exposing (backgroundWithTabs)
 import View.Tabs.Artists.Luca
+import View.Tabs.Artists.Marv
 
 
 viewArtists : Element Msg
 viewArtists =
     backgroundWithTabs
-        [ View.Tabs.Artists.Luca.button ]
+        [ View.Tabs.Artists.Luca.button
+        , View.Tabs.Artists.Marv.button
+        ]
