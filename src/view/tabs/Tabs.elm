@@ -16,7 +16,7 @@ tabs =
         ]
         [ tab "Home" (ClickedTab LandingPage)
         , tab "Our Story" (ClickedTab OurStory)
-        , tab "Artists" (ClickedTab Artists)
+        , tab "Artists" (ClickedTab (Artists Nothing))
         ]
 
 

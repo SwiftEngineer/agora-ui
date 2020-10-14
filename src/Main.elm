@@ -6,8 +6,9 @@ import Browser
 import Element exposing (Element)
 import Html exposing (Html)
 import Msg exposing (Msg(..))
-import State exposing (State(..))
-import View.Tabs.Artists exposing (viewArtists)
+import State exposing (Artist(..), State(..))
+import View.Tabs.Artists.Artists exposing (viewArtists)
+import View.Tabs.Artists.Luca
 import View.Tabs.LandingPage exposing (viewLandingPage)
 import View.Tabs.OurStory exposing (viewOurStory)
 
@@ -52,6 +53,9 @@ update msg model =
         ClickedTab state ->
             ( { model | state = state }, Cmd.none )
 
+        ClickedArtist artist ->
+            ( { model | state = Artists (Just artist) }, Cmd.none )
+
 
 
 -- VIEW
@@ -71,5 +75,24 @@ elementView model =
         OurStory ->
             viewOurStory
 
-        Artists ->
-            viewArtists
+        Artists maybeArtist ->
+            case maybeArtist of
+                Just artist ->
+                    case artist of
+                        Marv ->
+                            viewArtists
+
+                        Luca ->
+                            View.Tabs.Artists.Luca.view
+
+                        Alec ->
+                            viewArtists
+
+                        Alex ->
+                            viewArtists
+
+                        Zac ->
+                            viewArtists
+
+                Nothing ->
+                    viewArtists

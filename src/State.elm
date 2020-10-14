@@ -1,7 +1,15 @@
-module State exposing (State(..))
+module State exposing (Artist(..), State(..))
 
 
 type State
     = LandingPage
     | OurStory
-    | Artists
+    | Artists (Maybe Artist)
+
+
+type Artist
+    = Marv
+    | Luca
+    | Alec
+    | Alex
+    | Zac
