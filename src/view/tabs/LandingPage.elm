@@ -13,12 +13,26 @@ viewLandingPage =
         background
         [ tabs
         , Element.row
-            [ Element.alignRight
-            , Element.centerY
+            [ Element.centerY
             , Font.size 50
             , Font.family [ Font.serif ]
             , Font.letterSpacing 10
             ]
-            [ Element.text "原来如此 Agora Records"
+            [ image1
+            , Element.el
+                [ Element.moveRight 150
+                ]
+                (Element.text "原来如此 Agora Records")
             ]
         ]
+
+
+image1 : Element Msg
+image1 =
+    Element.image
+        [ Element.alignLeft
+        , Element.paddingEach { top = 75, right = 19, bottom = 0, left = 19 }
+        ]
+        { src = "./assets/landing-page/000022640020.jpeg"
+        , description = "image1"
+        }
