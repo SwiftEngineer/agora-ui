@@ -109,6 +109,10 @@ tab label msg =
     Input.button
         [ Element.paddingXY 10 3
         , Border.innerGlow (Element.rgb255 133 94 66) 1.5
+        , Font.size 20
+        , Font.family [ Font.serif ]
+        , Font.letterSpacing 1
+        , Font.color (Element.rgb255 133 94 66)
         ]
         { onPress = Just msg
         , label = Element.text label
