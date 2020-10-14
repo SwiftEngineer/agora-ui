@@ -1,3 +1,5 @@
+#######################################################
+## DOMAINS ############################################
 resource "aws_s3_bucket" "domain" {
   bucket = var.domain_name
   force_destroy = true
@@ -35,3 +37,33 @@ resource "aws_s3_bucket" "sub-domain-www" {
     redirect_all_requests_to = var.domain_name
   }
 }
+#######################################################
+
+#######################################################
+## IMAGES #############################################
+resource "aws_s3_bucket" "images" {
+  bucket = "images.${var.domain_name}"
+  force_destroy = true
+  acl = "public-read"
+
+  tags = {
+    Project = "agora"
+    ServiceType = "ui"
+  }
+
+  policy = <<POLICY
+{
+  "Version":"2012-10-17",
+  "Statement":[
+    {
+      "Sid":"AddPerm",
+      "Effect":"Allow",
+      "Principal": "*",
+      "Action":["s3:GetObject"],
+      "Resource":["arn:aws:s3:::images.${var.domain_name}/*"]
+    }
+  ]
+}
+POLICY
+}
+#######################################################

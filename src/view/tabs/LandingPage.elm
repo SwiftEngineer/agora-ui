@@ -37,6 +37,6 @@ image1 =
     Element.image
         [ Element.width (Element.fillPortion 10)
         ]
-        { src = "./assets/landing-page/000022640020.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/landing-page/000022640020.jpeg"
         , description = "image1"
         }
