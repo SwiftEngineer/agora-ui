@@ -42,7 +42,7 @@ image1 : Element Msg
 image1 =
     Element.image
         [ Border.shadow
-            { offset = (25.0, -15.0)
+            { offset = ( 25.0, -15.0 )
             , size = 1.0
             , blur = 10.0
             , color = Element.rgb255 128 128 128
@@ -59,7 +59,7 @@ image2 =
         [ Element.centerX
         , Element.centerY
         , Border.shadow
-            { offset = (25.0, -15.0)
+            { offset = ( 25.0, -15.0 )
             , size = 1.0
             , blur = 10.0
             , color = Element.rgb255 128 128 128
