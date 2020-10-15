@@ -41,7 +41,7 @@ image1 : Element Msg
 image1 =
     Element.image
         []
-        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000019690015.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }
 
@@ -52,6 +52,6 @@ image2 =
         [ Element.centerX
         , Element.centerY
         ]
-        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000019690015.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }
