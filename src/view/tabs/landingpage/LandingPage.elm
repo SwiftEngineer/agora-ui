@@ -1,4 +1,4 @@
-module View.Tabs.LandingPage exposing (viewLandingPage)
+module View.Tabs.LandingPage.LandingPage exposing (viewLandingPage)
 
 import Element exposing (Element)
 import Element.Font as Font

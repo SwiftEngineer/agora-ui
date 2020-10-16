@@ -10,8 +10,8 @@ import State exposing (Artist(..), State(..))
 import View.Tabs.Artists.Artists exposing (viewArtists)
 import View.Tabs.Artists.Luca
 import View.Tabs.Artists.Marv
-import View.Tabs.LandingPage exposing (viewLandingPage)
-import View.Tabs.OurStory exposing (viewOurStory)
+import View.Tabs.LandingPage.LandingPage exposing (viewLandingPage)
+import View.Tabs.OurStory.OurStory exposing (viewOurStory)
 
 
 main : Program () Model Msg

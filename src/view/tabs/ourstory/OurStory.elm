@@ -1,4 +1,4 @@
-module View.Tabs.OurStory exposing (viewOurStory)
+module View.Tabs.OurStory.OurStory exposing (viewOurStory)
 
 import Element exposing (Element)
 import Element.Font as Font
