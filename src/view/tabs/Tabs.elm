@@ -24,11 +24,12 @@ tab : String -> Msg -> Element Msg
 tab label msg =
     Input.button
         [ Element.paddingXY 10 3
-        , Border.innerGlow (Element.rgb255 133 94 66) 1.5
         , Font.size 35
         , Font.family [ Font.serif ]
+        , Font.semiBold
         , Font.letterSpacing 1
-        , Font.color (Element.rgb255 133 94 66)
+        , Font.color (Element.rgb255 200 200 200)
+        , Border.widthEach { bottom = 2, left = 0, right = 0, top = 0 }
         ]
         { onPress = Just msg
         , label = Element.text label
