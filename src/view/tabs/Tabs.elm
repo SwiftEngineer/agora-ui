@@ -14,9 +14,9 @@ tabs =
         [ Element.moveRight 100
         , Element.spacing 50
         ]
-        [ tab "Home" (ClickedTab LandingPage)
-        , tab "Our Story" (ClickedTab OurStory)
-        , tab "Artists" (ClickedTab (Artists Nothing))
+        [ tab "HOME" (ClickedTab LandingPage)
+        , tab "OUR STORY" (ClickedTab OurStory)
+        , tab "ARTISTS" (ClickedTab (Artists Nothing))
         ]
 
 
