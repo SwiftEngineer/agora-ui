@@ -11,7 +11,7 @@ import State exposing (State(..))
 tabs : Element Msg
 tabs =
     Element.row
-        [ Element.moveRight 100
+        [ Element.moveRight 10
         , Element.spacing 50
         ]
         [ tab "HOME" (ClickedTab LandingPage)
