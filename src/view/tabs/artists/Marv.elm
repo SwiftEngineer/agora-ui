@@ -1,12 +1,12 @@
-module View.Tabs.Artists.Marv exposing (..)
+module View.Tabs.Artists.Marv exposing (button, view)
 
 import Element exposing (Element)
-import Element.Border as Border
 import Element.Font as Font
 import Element.Input as Input
 import Msg exposing (Msg(..))
 import State exposing (Artist(..))
 import View.Background exposing (backgroundWithTabs)
+import View.ImageStyles exposing (centeredWithShadow, withShadow)
 
 
 view : Element Msg
@@ -41,13 +41,7 @@ label =
 image1 : Element Msg
 image1 =
     Element.image
-        [ Border.shadow
-            { offset = ( 25.0, -15.0 )
-            , size = 1.0
-            , blur = 10.0
-            , color = Element.rgb255 128 128 128
-            }
-        ]
+        withShadow
         { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }
@@ -56,15 +50,7 @@ image1 =
 image2 : Element Msg
 image2 =
     Element.image
-        [ Element.centerX
-        , Element.centerY
-        , Border.shadow
-            { offset = ( 25.0, -15.0 )
-            , size = 1.0
-            , blur = 10.0
-            , color = Element.rgb255 128 128 128
-            }
-        ]
+        centeredWithShadow
         { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }
