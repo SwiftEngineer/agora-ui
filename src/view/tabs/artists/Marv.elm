@@ -6,7 +6,7 @@ import Element.Input as Input
 import Msg exposing (Msg(..))
 import State exposing (Artist(..))
 import View.Background exposing (backgroundWithTabs)
-import View.ImageStyles exposing (centeredWithShadow, withShadow)
+import View.Styles exposing (centeredWithShadow, withShadow)
 
 
 view : Element Msg

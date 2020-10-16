@@ -1,4 +1,4 @@
-module View.ImageStyles exposing (centeredWithShadow, withShadow)
+module View.Styles exposing (centeredWithShadow, withShadow)
 
 import Element
 import Element.Border as Border
@@ -8,10 +8,10 @@ import Msg exposing (Msg)
 withShadow : List (Element.Attribute Msg)
 withShadow =
     [ Border.shadow
-        { offset = ( 25.0, -15.0 )
-        , size = 1.0
-        , blur = 10.0
-        , color = Element.rgb255 128 128 128
+        { offset = ( 0.0, 0.0 )
+        , size = 10.0
+        , blur = 25.0
+        , color = Element.rgb255 110 94 66
         }
     ]
 
