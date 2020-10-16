@@ -12,14 +12,12 @@ viewLandingPage =
         [ Element.column
             [ Element.centerX
             , Element.centerY
-            , Font.family [ Font.serif ]
             , Element.spacing 10
             ]
             [ Element.el
-                [ Element.width (Element.fillPortion 1)
-                , Element.alignRight
-                , Font.size 50
+                [ Font.size 50
                 , Font.letterSpacing 10
+                , Font.family [ Font.serif ]
                 ]
                 (Element.text "原来如此 Agora Records")
             , Element.el [] Element.none
