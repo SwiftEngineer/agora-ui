@@ -12,8 +12,6 @@ viewOurStory =
     backgroundWithTabs
         [ Element.row
             [ Element.spacing 25
-
-            -- , Element.alignRight
             ]
             [ Element.el [] Element.none
             , image1
