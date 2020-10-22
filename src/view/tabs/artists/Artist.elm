@@ -84,11 +84,10 @@ button name artist imageArg =
 
 label : String -> Element Msg -> Element Msg
 label name imageArg =
-    Element.row
-        [ Element.spacing 50
+    Element.column
+        [ Element.spacing 10
         ]
-        [ imageArg
-        , Element.el
+        [ Element.el
             [ Font.size 50
             , Font.family [ Font.serif ]
             , Font.letterSpacing 10
@@ -96,6 +95,7 @@ label name imageArg =
             , Font.semiBold
             ]
             (Element.text name)
+        , imageArg
         ]
 
 
