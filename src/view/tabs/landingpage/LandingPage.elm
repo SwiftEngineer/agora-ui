@@ -4,6 +4,7 @@ import Element exposing (Element)
 import Element.Font as Font
 import Msg exposing (Msg)
 import View.Background exposing (backgroundWithTabs)
+import View.Styles exposing (withShadow)
 
 
 viewLandingPage : Element Msg
@@ -30,7 +31,7 @@ viewLandingPage =
 image1 : Element Msg
 image1 =
     Element.image
-        []
+        withShadow
         { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/landing-page/000022640020.jpeg"
         , description = "image1"
         }
