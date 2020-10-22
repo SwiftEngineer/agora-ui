@@ -10,23 +10,26 @@ import View.Styles exposing (withShadow)
 
 
 view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
-view name imageArg soundCloudLink appleMusicLink spotifyLink =
+view name image soundCloudLink appleMusicLink spotifyLink =
     backgroundWithTabs
-        [ Element.column
-            [ Element.spacing 25
-            , Element.centerX
+        [ Element.el [] Element.none
+        , Element.el
+            [ Element.centerX
+            , Font.size 50
+            , Font.family [ Font.serif ]
+            , Font.letterSpacing 10
+            , Font.italic
+            , Font.semiBold
             ]
-            [ Element.el [] Element.none
-            , Element.column
-                [ Element.alignTop
-                , Element.spacing 10
-                , Element.centerX
-                ]
-                (image name imageArg)
-            , Element.el [] Element.none
-            , linkMatrix soundCloudLink appleMusicLink spotifyLink
-            , Element.el [] Element.none
-            ]
+            (Element.text name)
+        , Element.el [] Element.none
+        , image
+        , Element.el [] Element.none
+        , linkMatrix
+            soundCloudLink
+            appleMusicLink
+            spotifyLink
+        , Element.el [] Element.none
         ]
 
 
@@ -34,27 +37,12 @@ linkMatrix : Element Msg -> Element Msg -> Element Msg -> Element Msg
 linkMatrix soundCloudLink appleMusicLink spotifyLink =
     Element.column
         [ Element.spacing 10
+        , Element.centerX
         ]
         [ Element.el [] Element.none
-        , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
-        , Element.row [ Element.spacing 10 ] [ spotifyLink, logo ]
+        , Element.row [ Element.spacing 10, Element.centerX ] [ soundCloudLink, appleMusicLink ]
+        , Element.row [ Element.spacing 10, Element.centerX ] [ spotifyLink, logo ]
         ]
-
-
-image : String -> Element Msg -> List (Element Msg)
-image name imageArg =
-    [ Element.el
-        [ Element.centerX
-        , Font.size 50
-        , Font.family [ Font.serif ]
-        , Font.letterSpacing 10
-        , Font.italic
-        , Font.semiBold
-        ]
-        (Element.text name)
-    , Element.el [] Element.none
-    , imageArg
-    ]
 
 
 button : String -> Artist -> Element Msg -> Element Msg

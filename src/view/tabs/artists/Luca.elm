@@ -3,7 +3,7 @@ module View.Tabs.Artists.Luca exposing (button, view)
 import Element exposing (Element)
 import Msg exposing (Msg(..))
 import State exposing (Artist(..))
-import View.Styles exposing (withShadow)
+import View.Styles exposing (centeredWithShadow, withShadow)
 import View.Tabs.Artists.AppleMusic as AppleMusic
 import View.Tabs.Artists.Artist as Artist
 import View.Tabs.Artists.SoundCloud as SoundCloud
@@ -40,7 +40,7 @@ image1 =
 image2 : Element Msg
 image2 =
     Element.image
-        withShadow
+        centeredWithShadow
         { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/lucas/000019710037.jpeg"
         , description = "luca"
         }
