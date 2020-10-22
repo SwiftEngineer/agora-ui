@@ -11,7 +11,9 @@ viewArtists : Element Msg
 viewArtists =
     backgroundWithTabs
         [ Element.column
-            [ Element.centerX ]
+            [ Element.centerX
+            , Element.spacing 75
+            ]
             [ View.Tabs.Artists.Luca.button
             , View.Tabs.Artists.Marv.button
             ]

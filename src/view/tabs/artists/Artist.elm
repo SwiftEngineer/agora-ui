@@ -72,7 +72,8 @@ label name imageArg =
         [ Element.spacing 10
         ]
         [ Element.el
-            [ Font.size 50
+            [ Element.centerX
+            , Font.size 50
             , Font.family [ Font.serif ]
             , Font.letterSpacing 10
             , Font.italic
