@@ -1,4 +1,4 @@
-module View.Tabs.Artists.Artist exposing (button, view)
+module View.Tabs.Artists.Artist exposing (button, viewHorizontal, viewVertical)
 
 import Element exposing (Element)
 import Element.Font as Font
@@ -9,8 +9,8 @@ import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
 
 
-view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
-view name image soundCloudLink appleMusicLink spotifyLink =
+viewHorizontal : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
+viewHorizontal name imageArg soundCloudLink appleMusicLink spotifyLink =
     backgroundWithTabs
         [ Element.row
             [ Element.spacing 25
@@ -20,44 +20,74 @@ view name image soundCloudLink appleMusicLink spotifyLink =
                 [ Element.alignTop
                 , Element.spacing 10
                 ]
-                [ Element.el
-                    [ Font.size 50
-                    , Font.family [ Font.serif ]
-                    , Font.letterSpacing 10
-                    , Font.italic
-                    , Font.semiBold
-                    ]
-                    (Element.text name)
-                , Element.el [] Element.none
-                , image
-                ]
+                (image name imageArg)
             , Element.el [] Element.none
-            , Element.column
-                [ Element.spacing 10
-                ]
-                [ Element.el [] Element.none
-                , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
-                , Element.row [ Element.spacing 10 ] [ spotifyLink, logo ]
-                ]
+            , linkMatrix soundCloudLink appleMusicLink spotifyLink
             ]
         ]
 
 
+viewVertical : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
+viewVertical name imageArg soundCloudLink appleMusicLink spotifyLink =
+    backgroundWithTabs
+        [ Element.column
+            [ Element.spacing 25
+            , Element.centerX
+            ]
+            [ Element.el [] Element.none
+            , Element.column
+                [ Element.alignTop
+                , Element.spacing 10
+                ]
+                (image name imageArg)
+            , Element.el [] Element.none
+            , linkMatrix soundCloudLink appleMusicLink spotifyLink
+            , Element.el [] Element.none
+            ]
+        ]
+
+
+linkMatrix : Element Msg -> Element Msg -> Element Msg -> Element Msg
+linkMatrix soundCloudLink appleMusicLink spotifyLink =
+    Element.column
+        [ Element.spacing 10
+        ]
+        [ Element.el [] Element.none
+        , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
+        , Element.row [ Element.spacing 10 ] [ spotifyLink, logo ]
+        ]
+
+
+image : String -> Element Msg -> List (Element Msg)
+image name imageArg =
+    [ Element.el
+        [ Font.size 50
+        , Font.family [ Font.serif ]
+        , Font.letterSpacing 10
+        , Font.italic
+        , Font.semiBold
+        ]
+        (Element.text name)
+    , Element.el [] Element.none
+    , imageArg
+    ]
+
+
 button : String -> Artist -> Element Msg -> Element Msg
-button name artist image =
+button name artist imageArg =
     Input.button
         []
         { onPress = Just (ClickedArtist artist)
-        , label = label name image
+        , label = label name imageArg
         }
 
 
 label : String -> Element Msg -> Element Msg
-label name image =
+label name imageArg =
     Element.row
         [ Element.spacing 50
         ]
-        [ image
+        [ imageArg
         , Element.el
             [ Font.size 50
             , Font.family [ Font.serif ]
