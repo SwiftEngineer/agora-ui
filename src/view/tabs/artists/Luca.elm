@@ -40,7 +40,7 @@ image1 =
 image2 : Element Msg
 image2 =
     Element.image
-        (withShadow ++ [ Element.alignTop ])
+        withShadow
         { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/lucas/000019710037.jpeg"
         , description = "luca"
         }
