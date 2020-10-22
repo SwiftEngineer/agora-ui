@@ -6,6 +6,7 @@ import Element.Input as Input
 import Msg exposing (Msg(..))
 import State exposing (Artist)
 import View.Background exposing (backgroundWithTabs)
+import View.Styles exposing (withShadow)
 
 
 view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
@@ -36,7 +37,7 @@ view name image soundCloudLink appleMusicLink spotifyLink =
                 ]
                 [ Element.el [] Element.none
                 , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
-                , spotifyLink
+                , Element.row [ Element.spacing 10 ] [ spotifyLink, logo ]
                 ]
             ]
         ]
@@ -66,3 +67,12 @@ label name image =
             ]
             (Element.text name)
         ]
+
+
+logo : Element Msg
+logo =
+    Element.image
+        withShadow
+        { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/agora500x282.jpeg"
+        , description = "agora logo scaled 500 in width"
+        }
