@@ -18,11 +18,8 @@ background =
 backgroundWithTabs : List (Element Msg) -> Element Msg
 backgroundWithTabs moreElements =
     Element.column
-        (background ++ [ Element.spacing 25 ])
+        (background ++ [ Element.spacing 100 ])
         ([ tabs
-         , Element.el [] Element.none
-         , Element.el [] Element.none
-         , Element.el [] Element.none
          , Element.el [] Element.none
          ]
             ++ moreElements
