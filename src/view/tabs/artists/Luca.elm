@@ -5,37 +5,20 @@ import Element.Font as Font
 import Element.Input as Input
 import Msg exposing (Msg(..))
 import State exposing (Artist(..))
-import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
 import View.Tabs.Artists.AppleMusic as AppleMusic
+import View.Tabs.Artists.Artist as Artist
 import View.Tabs.Artists.SoundCloud as SoundCloud
 import View.Tabs.Artists.Spotify as Spotify
 
 
 view : Element Msg
 view =
-    backgroundWithTabs
-        [ Element.row
-            [ Element.spacing 25
-            ]
-            [ Element.el [] Element.none
-            , image2
-            , Element.el [] Element.none
-            , Element.column
-                [ Element.spacing 10
-                ]
-                [ Element.el
-                    [ Font.size 50
-                    , Font.family [ Font.serif ]
-                    , Font.letterSpacing 10
-                    ]
-                    (Element.text "原来如此 Shai Lu . . . ")
-                , Element.el [] Element.none
-                , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
-                , spotifyLink
-                ]
-            ]
-        ]
+    Artist.view
+        image2
+        soundCloudLink
+        appleMusicLink
+        spotifyLink
 
 
 button : Element Msg
