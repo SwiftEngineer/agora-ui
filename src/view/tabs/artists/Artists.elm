@@ -16,5 +16,6 @@ viewArtists =
             ]
             [ View.Tabs.Artists.Luca.button
             , View.Tabs.Artists.Marv.button
+            , Element.el [] Element.none
             ]
         ]
