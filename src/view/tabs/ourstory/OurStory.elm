@@ -3,22 +3,19 @@ module View.Tabs.OurStory.OurStory exposing (viewOurStory)
 import Element exposing (Element)
 import Element.Font as Font
 import Msg exposing (Msg)
-import View.Background exposing (background)
+import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
-import View.Tabs.Tabs exposing (tabs)
 
 
 viewOurStory : Element Msg
 viewOurStory =
-    Element.column
-        background
-        [ tabs
-        , Element.row
-            [ Element.alignRight
-            , Element.centerY
-            , Element.spacing 50
+    backgroundWithTabs
+        [ Element.row
+            [ Element.spacing 25
+            , Element.alignRight
             ]
-            [ image1
+            [ Element.el [] Element.none
+            , image1
             , Element.el [] Element.none
             , Element.el
                 [ Font.size 50
