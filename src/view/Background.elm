@@ -11,7 +11,7 @@ background =
     [ Background.color (Element.rgb255 245 239 220)
     , Element.width Element.fill
     , Element.height Element.fill
-    , Element.scrollbarX
+    , Element.scrollbars
     ]
 
 
