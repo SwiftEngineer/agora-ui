@@ -32,6 +32,6 @@ image1 : Element Msg
 image1 =
     Element.image
         withShadow
-        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/landing-page/000022640020.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/landing-page/000022640020.jpeg"
         , description = "image1"
         }

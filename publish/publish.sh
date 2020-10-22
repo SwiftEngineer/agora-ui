@@ -1,2 +1,2 @@
-sh publish-images.sh
+sh publish-assets.sh
 sh publish-index.sh

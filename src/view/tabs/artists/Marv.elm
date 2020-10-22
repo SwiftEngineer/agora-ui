@@ -42,7 +42,7 @@ image1 : Element Msg
 image1 =
     Element.image
         withShadow
-        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }
 
@@ -51,6 +51,6 @@ image2 : Element Msg
 image2 =
     Element.image
         centeredWithShadow
-        { src = "https://s3-us-west-2.amazonaws.com/images.thetapin.net/artists/marv/000022640011.jpeg"
+        { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/marv/000022640011.jpeg"
         , description = "marv"
         }

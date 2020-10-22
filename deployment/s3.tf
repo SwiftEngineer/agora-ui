@@ -40,9 +40,9 @@ resource "aws_s3_bucket" "sub-domain-www" {
 #######################################################
 
 #######################################################
-## IMAGES #############################################
-resource "aws_s3_bucket" "images" {
-  bucket = "images.${var.domain_name}"
+## ASSETS #############################################
+resource "aws_s3_bucket" "assets" {
+  bucket = "assets.${var.domain_name}"
   force_destroy = true
   acl = "public-read"
 
@@ -60,7 +60,7 @@ resource "aws_s3_bucket" "images" {
       "Effect":"Allow",
       "Principal": "*",
       "Action":["s3:GetObject"],
-      "Resource":["arn:aws:s3:::images.${var.domain_name}/*"]
+      "Resource":["arn:aws:s3:::assets.${var.domain_name}/*"]
     }
   ]
 }
