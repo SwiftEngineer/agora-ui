@@ -1,6 +1,10 @@
 secrets.tfvars
 .terraform
 .idea
-elm-stuff
 *.html
 *.iml
+
+# elm build artifacts
+elm-stuff/
+dist/
+assets/elm.min.js
