@@ -24,8 +24,10 @@ viewOurStory =
                 [ Font.size 50
                 , Font.family [ Font.serif ]
                 , Font.letterSpacing 10
+                , Font.italic
+                , Font.semiBold
                 ]
-                (Element.text "原来如此 Our Story . . . ")
+                (Element.text "原来如此 Our Story . . .")
             ]
         ]
 
