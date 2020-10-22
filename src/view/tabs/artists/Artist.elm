@@ -6,8 +6,8 @@ import Msg exposing (Msg)
 import View.Background exposing (backgroundWithTabs)
 
 
-view : Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
-view image soundCloudLink appleMusicLink spotifyLink =
+view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
+view name image soundCloudLink appleMusicLink spotifyLink =
     backgroundWithTabs
         [ Element.row
             [ Element.spacing 25
@@ -23,7 +23,7 @@ view image soundCloudLink appleMusicLink spotifyLink =
                     , Font.family [ Font.serif ]
                     , Font.letterSpacing 10
                     ]
-                    (Element.text "原来如此 Shai Lu . . . ")
+                    (Element.text name)
                 , Element.el [] Element.none
                 , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
                 , spotifyLink

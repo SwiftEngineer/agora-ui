@@ -15,6 +15,7 @@ import View.Tabs.Artists.Spotify as Spotify
 view : Element Msg
 view =
     Artist.view
+        "原来如此 Shai Lu . . . "
         image2
         soundCloudLink
         appleMusicLink
