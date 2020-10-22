@@ -10,20 +10,24 @@ import View.Styles exposing (withShadow)
 viewOurStory : Element Msg
 viewOurStory =
     backgroundWithTabs
-        [ Element.row
+        [ Element.column
             [ Element.spacing 25
+            , Element.centerX
             ]
-            [ Element.el [] Element.none
-            , image1
-            , Element.el [] Element.none
-            , Element.el
+            [ Element.column
                 [ Font.size 50
                 , Font.family [ Font.serif ]
                 , Font.letterSpacing 10
                 , Font.italic
                 , Font.semiBold
+                , Element.centerX
                 ]
-                (Element.text "原来如此 OUR STORY . . .")
+                [ Element.el [ Element.centerX ] (Element.text "原来如此 OUR STORY")
+                , Element.el [ Element.centerX ] (Element.text " . . . ")
+                ]
+            , Element.el [] Element.none
+            , image1
+            , Element.el [] Element.none
             ]
         ]
 
