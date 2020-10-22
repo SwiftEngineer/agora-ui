@@ -10,6 +10,13 @@ import View.Tabs.Artists.Marv
 viewArtists : Element Msg
 viewArtists =
     backgroundWithTabs
-        [ View.Tabs.Artists.Luca.button
-        , View.Tabs.Artists.Marv.button
+        [ Element.row
+            [ Element.spacing 25 ]
+            [ Element.el [] Element.none
+            , Element.column
+                [ Element.spacing 25 ]
+                [ View.Tabs.Artists.Luca.button
+                , View.Tabs.Artists.Marv.button
+                ]
+            ]
         ]

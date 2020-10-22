@@ -16,10 +16,11 @@ view : Element Msg
 view =
     backgroundWithTabs
         [ Element.row
-            [ Element.spacing 50
-            , Element.centerX
+            [ Element.spacing 25
             ]
-            [ image2
+            [ Element.el [] Element.none
+            , image2
+            , Element.el [] Element.none
             , Element.column
                 [ Element.spacing 10
                 ]
