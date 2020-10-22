@@ -12,24 +12,28 @@ import View.Styles exposing (withShadow)
 view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
 view name image soundCloudLink appleMusicLink spotifyLink =
     backgroundWithTabs
-        [ Element.el [] Element.none
-        , Element.el
-            [ Element.centerX
-            , Font.size 50
-            , Font.family [ Font.serif ]
-            , Font.letterSpacing 10
-            , Font.italic
-            , Font.semiBold
+        [ Element.column
+            [ Element.spacing 50
+            , Element.centerX
             ]
-            (Element.text name)
-        , Element.el [] Element.none
-        , image
-        , Element.el [] Element.none
-        , linkMatrix
-            soundCloudLink
-            appleMusicLink
-            spotifyLink
-        , Element.el [] Element.none
+            [ Element.el
+                [ Element.centerX
+                , Font.size 50
+                , Font.family [ Font.serif ]
+                , Font.letterSpacing 10
+                , Font.italic
+                , Font.semiBold
+                ]
+                (Element.text name)
+            , image
+            , linkMatrix
+                soundCloudLink
+                appleMusicLink
+                spotifyLink
+            , Element.el [] Element.none
+            , Element.el [] Element.none
+            , Element.el [] Element.none
+            ]
         ]
 
 
