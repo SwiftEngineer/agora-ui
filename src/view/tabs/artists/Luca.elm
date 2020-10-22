@@ -8,6 +8,7 @@ import State exposing (Artist(..))
 import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
 import View.Tabs.Artists.SoundCloud as SoundCloud
+import View.Tabs.Artists.Spotify as Spotify
 
 
 view : Element Msg
@@ -27,9 +28,10 @@ view =
                     , Font.family [ Font.serif ]
                     , Font.letterSpacing 10
                     ]
-                    (Element.text "原来如此 Shailu . . . ")
+                    (Element.text "原来如此 Shai Lu . . . ")
                 , Element.el [] Element.none
                 , soundCloudLink
+                , spotifyLink
                 ]
             ]
         ]
@@ -55,7 +57,7 @@ label =
             , Font.family [ Font.serif ]
             , Font.letterSpacing 10
             ]
-            (Element.text "原来如此 Shailu . . . ")
+            (Element.text "原来如此 Shai Lu . . . ")
         ]
 
 
@@ -80,7 +82,16 @@ image2 =
 soundCloudLink : Element Msg
 soundCloudLink =
     Element.newTabLink
-        []
+        withShadow
         { url = "https://soundcloud.com/shailuchamploo"
         , label = SoundCloud.image
+        }
+
+
+spotifyLink : Element Msg
+spotifyLink =
+    Element.newTabLink
+        withShadow
+        { url = "https://open.spotify.com/artist/5Qgvqr0l3DeBWNt7gDFdKb?si=aeMkmjx_Qg-QCb6JKK2V9A"
+        , label = Spotify.image
         }
