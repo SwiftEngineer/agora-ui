@@ -1,8 +1,6 @@
 module View.Tabs.Artists.Luca exposing (button, view)
 
 import Element exposing (Element)
-import Element.Font as Font
-import Element.Input as Input
 import Msg exposing (Msg(..))
 import State exposing (Artist(..))
 import View.Styles exposing (withShadow)
@@ -15,7 +13,7 @@ import View.Tabs.Artists.Spotify as Spotify
 view : Element Msg
 view =
     Artist.view
-        "原来如此 Shai Lu . . . "
+        "原来如此 SHAI LU"
         image2
         soundCloudLink
         appleMusicLink
@@ -24,26 +22,10 @@ view =
 
 button : Element Msg
 button =
-    Input.button
-        []
-        { onPress = Just (ClickedArtist Luca)
-        , label = label
-        }
-
-
-label : Element Msg
-label =
-    Element.row
-        [ Element.spacing 50
-        ]
-        [ image1
-        , Element.el
-            [ Font.size 50
-            , Font.family [ Font.serif ]
-            , Font.letterSpacing 10
-            ]
-            (Element.text "原来如此 Shai Lu . . . ")
-        ]
+    Artist.button
+        "原来如此 SHAI LU"
+        Luca
+        image1
 
 
 image1 : Element Msg
