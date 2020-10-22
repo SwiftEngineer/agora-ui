@@ -7,6 +7,7 @@ import Msg exposing (Msg(..))
 import State exposing (Artist(..))
 import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
+import View.Tabs.Artists.AppleMusic as AppleMusic
 import View.Tabs.Artists.SoundCloud as SoundCloud
 import View.Tabs.Artists.Spotify as Spotify
 
@@ -20,8 +21,7 @@ view =
             ]
             [ image2
             , Element.column
-                [ Element.alignTop
-                , Element.spacing 10
+                [ Element.spacing 10
                 ]
                 [ Element.el
                     [ Font.size 50
@@ -30,7 +30,7 @@ view =
                     ]
                     (Element.text "原来如此 Shai Lu . . . ")
                 , Element.el [] Element.none
-                , soundCloudLink
+                , Element.row [Element.spacing 10] [ soundCloudLink, appleMusicLink ]
                 , spotifyLink
                 ]
             ]
@@ -73,7 +73,7 @@ image1 =
 image2 : Element Msg
 image2 =
     Element.image
-        withShadow
+        (withShadow ++ [ Element.alignTop ])
         { src = "https://s3-us-west-2.amazonaws.com/assets.thetapin.net/artists/lucas/000019710037.jpeg"
         , description = "luca"
         }
@@ -94,4 +94,13 @@ spotifyLink =
         withShadow
         { url = "https://open.spotify.com/artist/5Qgvqr0l3DeBWNt7gDFdKb?si=aeMkmjx_Qg-QCb6JKK2V9A"
         , label = Spotify.image
+        }
+
+
+appleMusicLink : Element Msg
+appleMusicLink =
+    Element.newTabLink
+        withShadow
+        { url = "https://music.apple.com/us/artist/shai-lu/1534265703"
+        , label = AppleMusic.image
         }
