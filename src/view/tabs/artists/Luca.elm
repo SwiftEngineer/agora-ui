@@ -30,7 +30,7 @@ view =
                     ]
                     (Element.text "原来如此 Shai Lu . . . ")
                 , Element.el [] Element.none
-                , Element.row [Element.spacing 10] [ soundCloudLink, appleMusicLink ]
+                , Element.row [ Element.spacing 10 ] [ soundCloudLink, appleMusicLink ]
                 , spotifyLink
                 ]
             ]
