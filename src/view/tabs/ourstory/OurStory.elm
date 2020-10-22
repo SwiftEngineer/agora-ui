@@ -27,7 +27,7 @@ viewOurStory =
                 , Font.italic
                 , Font.semiBold
                 ]
-                (Element.text "原来如此 Our Story . . .")
+                (Element.text "原来如此 OUR STORY . . .")
             ]
         ]
 
