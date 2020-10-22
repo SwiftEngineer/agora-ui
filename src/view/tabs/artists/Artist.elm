@@ -1,4 +1,4 @@
-module View.Tabs.Artists.Artist exposing (button, viewHorizontal, viewVertical)
+module View.Tabs.Artists.Artist exposing (button, view)
 
 import Element exposing (Element)
 import Element.Font as Font
@@ -9,26 +9,8 @@ import View.Background exposing (backgroundWithTabs)
 import View.Styles exposing (withShadow)
 
 
-viewHorizontal : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
-viewHorizontal name imageArg soundCloudLink appleMusicLink spotifyLink =
-    backgroundWithTabs
-        [ Element.row
-            [ Element.spacing 25
-            ]
-            [ Element.el [] Element.none
-            , Element.column
-                [ Element.alignTop
-                , Element.spacing 10
-                ]
-                (image name imageArg)
-            , Element.el [] Element.none
-            , linkMatrix soundCloudLink appleMusicLink spotifyLink
-            ]
-        ]
-
-
-viewVertical : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
-viewVertical name imageArg soundCloudLink appleMusicLink spotifyLink =
+view : String -> Element Msg -> Element Msg -> Element Msg -> Element Msg -> Element Msg
+view name imageArg soundCloudLink appleMusicLink spotifyLink =
     backgroundWithTabs
         [ Element.column
             [ Element.spacing 25
@@ -38,6 +20,7 @@ viewVertical name imageArg soundCloudLink appleMusicLink spotifyLink =
             , Element.column
                 [ Element.alignTop
                 , Element.spacing 10
+                , Element.centerX
                 ]
                 (image name imageArg)
             , Element.el [] Element.none
@@ -61,7 +44,8 @@ linkMatrix soundCloudLink appleMusicLink spotifyLink =
 image : String -> Element Msg -> List (Element Msg)
 image name imageArg =
     [ Element.el
-        [ Font.size 50
+        [ Element.centerX
+        , Font.size 50
         , Font.family [ Font.serif ]
         , Font.letterSpacing 10
         , Font.italic

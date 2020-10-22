@@ -12,7 +12,7 @@ import View.Tabs.Artists.Spotify as Spotify
 
 view : Element Msg
 view =
-    Artist.viewVertical
+    Artist.view
         "原来如此 MARV ALI"
         image2
         soundCloudLink
