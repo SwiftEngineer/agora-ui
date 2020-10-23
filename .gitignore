@@ -1,7 +1,6 @@
 secrets.tfvars
 .terraform
 .idea
-*.html
 *.iml
 
 # elm build artifacts
